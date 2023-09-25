@@ -78,21 +78,21 @@ fun binarySearchRecursive(key) {
 
 # Fun Programming Language Specification
 
-##OPERATIONS AND PRECEDENCE
+## OPERATIONS AND PRECEDENCE
 Operations higher in the following table have higher precedence than any operation below it. Operations at the same row in the list have equal precedence and are evaluated left to right. The operations are placed within curly braces in the below table but do not include them.
 
 Let a and b be expressions that evaluate to unsigned 64 bit integers:
 
 Operation
 
-{(a)}
-{!a}
-{a * b} , {a / b}, {a % b}
-{a + b}, {a - b}
-{a < b}, {a <= b}, {a > b}, {a >= b}
-{a == b}, {a != b}
-{a && b}
-{a || b}
+**{(a)}**
+**{!a}**
+**{a * b} , {a / b}, {a % b}**
+**{a + b}, {a - b}**
+**{a < b}, {a <= b}, {a > b}, {a >= b}**
+**{a == b}, {a != b}**
+**{a && b}**
+**{a || b}**
 --------
 Every operation in this table returns an unsigned 64 bit integer. Every operation included in the previous spec has the exact same behavior.
 The relational operators return 0 if the relation is false, and 1 if it is true.
@@ -107,18 +107,18 @@ Short-circuiting is NOT implemented. If the first operand of && is false, the se
 
 / and % by a zero second operand has undefined behavior.
 
-##VARIABLES
+## VARIABLES
 Variables must abide by the naming guidelines of the first spec.
 
 Variables names may not have the following names:
 
-Invalid Names 
-if
-else
-while
-return
-fun
--------
+**Invalid Names**
+**if**
+**else**
+**while**
+**return**
+**fun**
+**-------**
 Variables are declared, assigned, and reassigned by:
 ```python
 <variableName> = <expression>
@@ -127,7 +127,7 @@ Variables defined outside of a function are global.
 
 The use of undefined variables in expression has undefined behavior.
 
-##FUNCTIONS
+## FUNCTIONS
 Syntax For Defining A Function
 ```python
 fun <functionName>(<parameter1>, <parameter2>, ..., <parameterN>) {
@@ -138,11 +138,11 @@ fun <functionName>(<parameter1>, <parameter2>, ..., <parameterN>) {
 }
 ```
 
-###Syntax For Calling a Function
+### Syntax For Calling a Function
 ```python
 <functionName>(<argument1>, <argument2>, ..., <argumentN>)
 ```
-###Requirements
+### Requirements
 - May have multiple parameters separated by commas
 - May have no parameters
 - Cannot have parameters of the same name.
@@ -171,8 +171,8 @@ The arguments of a function call are evaluated from left to right.
 - Undefined functions CANNOT be called.
 - Function names follow the exact same naming rules as variable names, defined in the previous spec, along with the restriction of not using special keywords that was introduced earlier in this spec. Additionally, functions may not be named “print”.
 
-##IF STATEMENTS AND WHILE LOOPS
-###If Statement Syntax
+## IF STATEMENTS AND WHILE LOOPS
+### If Statement Syntax
 ```python
 if (<expression>) {
     <statement1>
@@ -181,7 +181,7 @@ if (<expression>) {
     <statementK>
 }
 ```
-###If Statement With Else Clause Syntax
+### If Statement With Else Clause Syntax
 ```python
 if (<expression>) {
     <statement1>
@@ -195,7 +195,7 @@ if (<expression>) {
     <statementK+N>
 }
 ```
-###While Loop Syntax
+### While Loop Syntax
 ```python
 while (<expression>) {
     <statement1>
@@ -204,24 +204,24 @@ while (<expression>) {
     <statementN>
 }
 ```
-###Requirements
+### Requirements
 - A condition of 0 represents false, and the corresponding if / while body doesn’t run. If a condition is non zero, then the corresponding body does run.
 - An else clause cannot appear without a corresponding preceding if clause.
 - The body of if statements and while loops do not get their own scope separate from the global scope.
 
-##ERRORS AND UNDEFINED BEHAVIOUR
+## ERRORS AND UNDEFINED BEHAVIOUR
 Fun code that does not abide by the spec has undefined behavior.
 
 Additionally, having statements/function declarations that span multiple lines or share the same line is also undefined behavior. Basically, new lines separate statements/fun decs from each other.
 
-##PRINT
-###Print Syntax
+##P RINT
+### Print Syntax
 ```python
 print(<expression>)
 ```
 and it prints the unsigned 64 bit value of the expression passed to it.
 
-##ADDITIONAL NOTES
+## ADDITIONAL NOTES
 - The code is a sequence of statements. Statements include print, if, while, variable assignment, function declarations, function calls. Expressions by themselves are not statements and should not appear except as part of a statement.
   - f(5) is a valid statement (function call)
   - 5/2 is not a valid statement (it's just an expression)
