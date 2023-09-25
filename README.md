@@ -83,17 +83,18 @@ Operations higher in the following table have higher precedence than any operati
 
 Let a and b be expressions that evaluate to unsigned 64 bit integers:
 
-Operation
+**Operations**
+1) **{(a)}**
+2) **{!a}**
+3) **{a * b} , {a / b}, {a % b}**
+4) **{a + b}, {a - b}**
+5) **{a < b}, {a <= b}, {a > b}, {a >= b}**
+6) **{a == b}, {a != b}**
+7) **{a && b}**
+8) **{a || b}**
 
-**{(a)}**
-**{!a}**
-**{a * b} , {a / b}, {a % b}**
-**{a + b}, {a - b}**
-**{a < b}, {a <= b}, {a > b}, {a >= b}**
-**{a == b}, {a != b}**
-**{a && b}**
-**{a || b}**
---------
+**--------**
+
 Every operation in this table returns an unsigned 64 bit integer. Every operation included in the previous spec has the exact same behavior.
 The relational operators return 0 if the relation is false, and 1 if it is true.
 
@@ -113,12 +114,14 @@ Variables must abide by the naming guidelines of the first spec.
 Variables names may not have the following names:
 
 **Invalid Names**
-**if**
-**else**
-**while**
-**return**
-**fun**
+1) **if**
+2) **else**
+3) **while**
+4) **return**
+5) **fun**
+
 **-------**
+
 Variables are declared, assigned, and reassigned by:
 ```python
 <variableName> = <expression>
