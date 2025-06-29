@@ -160,16 +160,16 @@ and it prints the unsigned 64 bit value of the expression passed to it.
 # Using The Compiler
 ## The command line interface:
 
-./p3 <name>
+./main <name>
 
-The compiler (p3) reads a fun program from stdin and produces the compiled
+The compiler reads a fun program from stdin and produces the compiled
 output as x86-64 assembly to stdout.
 
 You can compile the assembly to produce an executable
 
 for example:
 
-    ./p3 < t0.fun > t0.s
+    ./main < t0.fun > t0.s
     gcc -o t0.run -static t0.s
     ./t0.run
 
@@ -200,10 +200,6 @@ for each test:
 ### To run one test
 
     make -s t0.test
-
-### To run by hand
-
-    ./p1 < t0.fun
 
 ### File names used by the Makefile:
 
